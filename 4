@@ -1,0 +1,16 @@
+#include <stdio.h>
+int countStudents(int* students, int studentsSize, int* sandwiches, int sandwichesSize) {
+    int count[2] = {0, 0};
+    for (int i = 0; i < studentsSize; i++) {
+        count[students[i]]++;
+         }
+         for (int i = 0; i < sandwichesSize; i++) {
+             int target_sandwich = sandwiches[i];
+             if (count[target_sandwich] > 0) {
+            count[target_sandwich]--;
+            } else {
+                break;
+                }
+                }
+                return count[0] + count[1];
+                }
